@@ -24,7 +24,7 @@ FastLoader allows you to disable specific CSS and JS files on a per-page basis. 
 1. Download the plugin `.zip` file.
 2. Log in to your WordPress Dashboard.
 3. Navigate to **Plugins > Add New > Upload Plugin**.
-4. Select the `fastload-selective-assets.zip` file and click **Install Now**.
+4. Select the `fastloader.zip` file and click **Install Now**.
 5. Click **Activate**.
 
 == Frequently Asked Questions ==

@@ -1,6 +1,5 @@
 <?php
 
-// Exit if accessed directly to prevent direct file access
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -19,38 +18,30 @@ class FASTLOADER_Asset_Manager
 
     private function __construct()
     {
-        // Core Meta Box Logic
         add_action('add_meta_boxes', array($this, 'register_meta_box'));
         add_action('save_post', array($this, 'save_meta_box_data'));
-
-        // The Selective Loading - Priority 9999 ensures it runs after everything else
         add_action('wp_enqueue_scripts', array($this, 'dequeue_selected_assets'), 9999);
-
-        // Scanner Assets
         add_action('admin_bar_menu', array($this, 'add_scan_button'), 999);
         add_action('wp_enqueue_scripts', array($this, 'enqueue_scanner_assets'));
-        
-        // Admin Assets
+        add_action('admin_enqueue_scripts', array($this, 'enqueue_scanner_assets'));
         add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_assets'));
     }
 
     public function enqueue_admin_assets($hook)
     {
         if ('post.php' === $hook || 'post-new.php' === $hook) {
-            $plugin_url = plugin_dir_url(dirname(__FILE__, 1));
-            wp_enqueue_style('fastloader-admin-style', $plugin_url . 'assets/css/admin-style.css', array(), '1.1');
+            wp_enqueue_style('fastloader-admin-style', FASTLOADER_URL . 'assets/css/admin-style.css', array(), FASTLOADER_VERSION);
         }
     }
 
-    // --- 1. SCANNER UI ---
     public function add_scan_button($wp_admin_bar)
     {
-        if (!is_admin() && current_user_can('manage_options')) {
+        if (current_user_can('manage_options')) {
             $wp_admin_bar->add_node(array(
                 'id' => 'fastloader-scan-assets',
                 'title' => '<span class="ab-icon dashicons dashicons-search"></span>' . __('Scan Assets', 'fastloader'),
                 'href' => '#',
-                'meta' => array('onclick' => 'fastloaderScanPage(); return false;')
+                'meta' => array('class' => 'fastloader-scan-action')
             ));
         }
     }
@@ -58,16 +49,26 @@ class FASTLOADER_Asset_Manager
     public function enqueue_scanner_assets()
     {
         if (is_admin_bar_showing() && current_user_can('manage_options')) {
-            $plugin_url = plugin_dir_url(dirname(__FILE__, 1));
-            wp_enqueue_style('fastloader-admin-style', $plugin_url . 'assets/css/admin-style.css', array(), '1.1');
-            wp_enqueue_script('fastloader-scanner', $plugin_url . 'assets/js/scanner.js', array('jquery'), '1.1', true);
+            wp_enqueue_style('fastloader-admin-style', FASTLOADER_URL . 'assets/css/admin-style.css', array(), FASTLOADER_VERSION);
+            wp_enqueue_script('fastloader-scanner', FASTLOADER_URL . 'assets/js/scanner.js', array('jquery'), FASTLOADER_VERSION, true);
+            
+            wp_localize_script('fastloader-scanner', 'fastloader_i18n', array(
+                'scanning'       => esc_html__('FastLoader: Scanning DOM for assets...', 'fastloader'),
+                'no_assets'      => esc_html__('No WordPress-managed assets detected. Ensure you are on the frontend.', 'fastloader'),
+                'active_handles' => esc_html__('Active Asset Handles', 'fastloader'),
+                'scripts'        => esc_html__('Scripts', 'fastloader'),
+                'styles'         => esc_html__('Stylesheets', 'fastloader'),
+                'tip'            => esc_html__('Tip: Click a handle to copy it to your clipboard.', 'fastloader'),
+                'copied'         => esc_html__('✓ Copied!', 'fastloader'),
+                'error_copy'     => esc_html__('FastLoader: Unable to copy', 'fastloader'),
+                'admin_warning'  => esc_html__('Please navigate to the frontend of your website to scan page-specific assets.', 'fastloader'),
+            ));
         }
     }
 
-    // --- 2. META BOX UI ---
     public function register_meta_box()
     {
-        add_meta_box('fastloader_manager', 'FastLoader Asset Manager', array($this, 'render_meta_box'), array('post', 'page'), 'side');
+        add_meta_box('fastloader_manager', __('FastLoader Asset Manager', 'fastloader'), array($this, 'render_meta_box'), array('post', 'page'), 'side');
     }
 
     public function render_meta_box($post)
@@ -83,7 +84,6 @@ class FASTLOADER_Asset_Manager
 
     public function save_meta_box_data($post_id)
     {
-        // Fix: Use wp_unslash and sanitize_key for nonce verification
         if (!isset($_POST['fastloader_nonce']) || !wp_verify_nonce(sanitize_key(wp_unslash($_POST['fastloader_nonce'])), 'fastloader_save_meta')) {
             return;
         }
@@ -97,13 +97,11 @@ class FASTLOADER_Asset_Manager
         }
 
         if (isset($_POST['fastloader_blocked'])) {
-            // Fix: Use wp_unslash before sanitizing input
             $sanitized_data = sanitize_textarea_field(wp_unslash($_POST['fastloader_blocked']));
             update_post_meta($post_id, '_fastloader_blocked_assets', $sanitized_data);
         }
     }
 
-    // --- 3. THE KILL SWITCH (Refined) ---
     public function dequeue_selected_assets()
     {
         if (is_admin()) {
