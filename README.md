@@ -51,7 +51,7 @@ Many WordPress plugins load their scripts and styles on every single page, even 
 ## 👨‍💻 Developer
 
 Developed by **Sakib MD Nazmush**. 
-Check out my other projects on [GitHub](https://github.com/nazsakib) or visit my [landing page](https://lightmaintenance.site).
+Check out my other projects on [GitHub](https://github.com/nazsakib) or visit my [portfolio](https://sakibnazmush.vercel.app).
 
 ---
 
