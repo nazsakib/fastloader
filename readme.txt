@@ -1,6 +1,6 @@
-=== FastLoader ===
+=== FastLoader: Ultimate WordPress Speed & Asset Optimization ===
 Contributors: sakibsnaz
-Tags: performance, speed, optimization, scripts, asset-manager
+Tags: performance, speed, optimization, scripts, asset-manager, core-web-vitals, pagespeed, seo, cleanup, debloat
 Requires at least: 6.0
 Tested up to: 6.9
 Stable tag: 1.0.0
@@ -8,16 +8,28 @@ Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Surgically disable specific CSS and JS files on a per-page basis to boost PageSpeed scores and eliminate plugin bloat.
+Boost your PageSpeed scores and master Core Web Vitals by surgically disabling unused CSS and JS files on a per-page basis.
 
 == Description ==
-FastLoader allows you to disable specific CSS and JS files on a per-page basis. This is perfect for stopping heavy plugins from loading their scripts on pages where they aren't needed, significantly improving your PageSpeed scores.
 
-== Key Features: ==
+**FastLoader** is a lightweight, high-performance plugin designed to eliminate the #1 cause of slow WordPress sites: **Plugin Bloat**. 
+
+Many plugins load their scripts and styles on every single page, even where they aren't used. This increases HTTP requests, adds render-blocking CSS, and slows down JavaScript execution—negatively impacting your **Google Search rankings** and **Core Web Vitals**.
+
+FastLoader gives you a surgical "Kill Switch." Easily identify and disable specific CSS and JS handles for every individual Post or Page, ensuring only the necessary code loads for your users.
+
+### 🚀 Why Choose FastLoader for SEO?
+* **Improve LCP & TBT:** Reduce the weight of your pages for better PageSpeed Insights scores.
+* **Master Core Web Vitals:** Eliminate render-blocking assets that hurt your rankings.
+* **Real-time Frontend Scanner:** No technical knowledge required. Scan and identify scripts directly from your site's frontend.
+* **Zero Bloat:** We don't add more weight to your site. Our plugin is built with native hooks and zero external dependencies.
+
+== Key Features ==
 * **Real-time Asset Scanner:** Detect active JS and CSS handles directly from the frontend admin bar.
-* **Per-Page Control:** No global settings that break your site; manage assets individually for every Post or Page.
-* **Zero Bloat:** Built using native WordPress hooks and lightweight JavaScript. No external APIs or heavy libraries.
-* **Safety First:** Prevents the accidental disabling of core WordPress dependencies like the Admin Bar and jQuery for logged-in admins.
+* **Per-Page Precision:** No global settings that break your site; manage assets individually for every Post or Page.
+* **Modern Glassmorphism UI:** A sleek, user-friendly scanner that makes optimization easy.
+* **Safety First Guard:** Prevents the accidental disabling of core WordPress dependencies like jQuery for admins.
+* **Ultra Lightweight:** Optimized PHP and minimal JS for zero overhead.
 
 == Installation ==
 
@@ -30,38 +42,38 @@ FastLoader allows you to disable specific CSS and JS files on a per-page basis. 
 == Frequently Asked Questions ==
 
 = How do I find the script handles? =
-Simply visit any page on your website while logged in as an administrator. In the top black Admin Bar, click the magnifying glass icon labeled **Scan Assets**. A popup will appear listing all the unique "handles" for the scripts and styles currently loading on that page.
+Visit any page while logged in as an administrator. In the top Admin Bar, click the **Scan Assets** icon. A popup will appear listing all the unique "handles" (nicknames) for the scripts and styles currently loading on that page.
 
-= What is a "handle"? =
-In WordPress, a handle is a unique nickname given to a script or stylesheet (e.g., `contact-form-7` or `wp-block-library`). Our plugin uses these nicknames to tell WordPress not to load them.
+= Will this improve my Google PageSpeed score? =
+Yes! By removing unused CSS and JS, you reduce the page size and execution time, which are critical factors for PageSpeed Insights and Core Web Vitals (LCP, FID, CLS).
 
-= Will this break my site? =
-If you disable a script that a page actually needs (like a gallery script on a gallery page), that specific feature will stop working. However, the rest of your site will remain intact. If something looks wrong, simply remove the handle from the FastLoader box and save the page to restore it.
+= What happens if I disable a script by mistake? =
+If a page feature stops working, simply remove the handle from the FastLoader box on the Edit Page screen and save. Your site will immediately return to its original state.
 
-= Can I disable core WordPress features? =
-We have included a "Protected List" to prevent you from accidentally disabling essential files like jQuery or the Admin Bar CSS, which would make it difficult to manage your site.
+= Is it safe for beginners? =
+Absolutely. We've included a "Protected List" to prevent you from disabling essential core files like jQuery or the Admin Bar CSS.
 
 == Details & Usage ==
 
 ### Step 1: Scanning the Frontend
-Navigate to the page you wish to optimize. Click **Scan Assets** in the Admin Bar. Copy the handles you want to remove (for example, `wp-block-library` if you aren't using Gutenberg blocks on that specific page).
+Navigate to the page you want to speed up. Click **Scan Assets** in the Admin Bar. Copy the handles of plugins you know aren't needed on this specific page (e.g., a contact form script on a blog post).
 
 ### Step 2: The Meta Box
-Go to the Edit screen for that page. On the right-hand sidebar, locate the **FastLoader Asset Manager** box. 
+Open the WordPress Editor for that page. Look for the **FastLoader Asset Manager** meta box in the sidebar.
 
 ### Step 3: Blocking Assets
-Paste the handles into the text area, one per line. 
+Paste the handles into the box, one per line. 
 *Example:*
 `contact-form-7`
-`mailchimp-for-wp`
+`wp-block-library`
 
 ### Step 4: Verification
-Save the page and view the frontend. Use the "View Page Source" feature or a speed testing tool like PageSpeed Insights to confirm that the files are no longer being requested.
+Save the page. You'll notice an immediate reduction in page weight and improved performance in tools like PageSpeed Insights or GTmetrix.
 
 == Screenshots ==
 
-1. **The Scanner:** The frontend scanner tool displaying active JS and CSS handles.
-2. **The Editor:** The Meta Box integrated into the WordPress Page Editor for easy asset management.
+1. **The Scanner:** Our sleek frontend scanner displaying active JS and CSS handles.
+2. **The Editor:** The intuitive Meta Box integrated into the WordPress Page/Post editor.
 
 == Changelog ==
 
