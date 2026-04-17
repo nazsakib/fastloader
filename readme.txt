@@ -1,74 +1,46 @@
-=== FastLoader: Ultimate WordPress Speed & Asset Optimization ===
-Contributors: sakibsnaz
-Tags: performance, speed, optimization, scripts, asset-manager, core-web-vitals, pagespeed, seo, cleanup, debloat
+=== Smart Asset Optimizer for Fast Loading ===
+Contributors: sakibmdnazmush
+Tags: speed, performance, optimization, asset management, core web vitals
 Requires at least: 6.0
 Tested up to: 6.9
 Stable tag: 1.0.0
-Requires PHP: 7.4
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Boost your PageSpeed scores and master Core Web Vitals by surgically disabling unused CSS and JS files on a per-page basis.
+Kill plugin bloat. Selectively disable unnecessary CSS and JS per page to boost speed and Core Web Vitals.
 
 == Description ==
 
-**FastLoader** is a lightweight, high-performance plugin designed to eliminate the #1 cause of slow WordPress sites: **Plugin Bloat**. 
+**Smart Asset Optimizer for Fast Loading** is a lightweight, high-performance plugin designed to eliminate the #1 cause of slow WordPress sites: **Plugin Bloat**. 
 
-Many plugins load their scripts and styles on every single page, even where they aren't used. This increases HTTP requests, adds render-blocking CSS, and slows down JavaScript execution—negatively impacting your **Google Search rankings** and **Core Web Vitals**.
+Most WordPress plugins load their scripts and styles on every single page, even when they aren't needed. This slows down your site, hurts your SEO, and frustrates your users.
 
-FastLoader gives you a surgical "Kill Switch." Easily identify and disable specific CSS and JS handles for every individual Post or Page, ensuring only the necessary code loads for your users.
+Smart Asset Optimizer gives you a surgical "Kill Switch." Easily identify and disable specific CSS and JS handles for every individual Post or Page, ensuring only the necessary code loads for your users.
 
-### 🚀 Why Choose FastLoader for SEO?
-* **Improve LCP & TBT:** Reduce the weight of your pages for better PageSpeed Insights scores.
-* **Master Core Web Vitals:** Eliminate render-blocking assets that hurt your rankings.
-* **Real-time Frontend Scanner:** No technical knowledge required. Scan and identify scripts directly from your site's frontend.
-* **Zero Bloat:** We don't add more weight to your site. Our plugin is built with native hooks and zero external dependencies.
+### 🚀 Why Choose Smart Asset Optimizer for Fast Loading?
 
-== Key Features ==
-* **Real-time Asset Scanner:** Detect active JS and CSS handles directly from the frontend admin bar.
-* **Per-Page Precision:** No global settings that break your site; manage assets individually for every Post or Page.
-* **Modern Glassmorphism UI:** A sleek, user-friendly scanner that makes optimization easy.
-* **Safety First Guard:** Prevents the accidental disabling of core WordPress dependencies like jQuery for admins.
-* **Ultra Lightweight:** Optimized PHP and minimal JS for zero overhead.
+*   **Boost Core Web Vitals:** Dramatically reduce "Total Blocking Time" and "Lighthouse" scores.
+*   **Per-Page Control:** No global settings that break your site. Choose exactly what to disable on a per-post basis.
+*   **Admin Bar Scanner:** A built-in scanner helps you identify every script and style handle running on your frontend in real-time.
+*   **Developer Friendly:** No complex configuration. Just paste the handle and save.
+*   **Ultra Lightweight:** Zero bloat. The plugin itself has a footprint of less than 20KB.
 
 == Installation ==
 
-1. Download the plugin `.zip` file.
-2. Log in to your WordPress Dashboard.
-3. Navigate to **Plugins > Add New > Upload Plugin**.
-4. Select the `fastloader.zip` file and click **Install Now**.
-5. Click **Activate**.
+1. Upload the plugin folder to the `/wp-content/plugins/` directory, or install via the WordPress dashboard.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Access the **Smart Asset Optimizer** meta box on any Post or Page edit screen.
+4. Select the `smart-asset-optimizer-fast-loading.zip` file and click **Install Now**.
 
 == Frequently Asked Questions ==
 
-= How do I find the script handles? =
-Visit any page while logged in as an administrator. In the top Admin Bar, click the **Scan Assets** icon. A popup will appear listing all the unique "handles" (nicknames) for the scripts and styles currently loading on that page.
+= How do I find the script or style handles? =
+Visit the frontend of any page while logged in as an administrator. Click **Scan Assets** in the WordPress Admin Bar. A modal will appear showing all active handles. Click any handle to copy it.
 
-= Will this improve my Google PageSpeed score? =
-Yes! By removing unused CSS and JS, you reduce the page size and execution time, which are critical factors for PageSpeed Insights and Core Web Vitals (LCP, FID, CLS).
+= Will this break my site? =
+If you disable a script that is required for a page feature (like a slider or contact form), that feature will stop working. However, this only affects the specific page you edited. 
 
-= What happens if I disable a script by mistake? =
-If a page feature stops working, simply remove the handle from the FastLoader box on the Edit Page screen and save. Your site will immediately return to its original state.
-
-= Is it safe for beginners? =
-Absolutely. We've included a "Protected List" to prevent you from disabling essential core files like jQuery or the Admin Bar CSS.
-
-== Details & Usage ==
-
-### Step 1: Scanning the Frontend
-Navigate to the page you want to speed up. Click **Scan Assets** in the Admin Bar. Copy the handles of plugins you know aren't needed on this specific page (e.g., a contact form script on a blog post).
-
-### Step 2: The Meta Box
-Open the WordPress Editor for that page. Look for the **FastLoader Asset Manager** meta box in the sidebar.
-
-### Step 3: Blocking Assets
-Paste the handles into the box, one per line. 
-*Example:*
-`contact-form-7`
-`wp-block-library`
-
-### Step 4: Verification
-Save the page. You'll notice an immediate reduction in page weight and improved performance in tools like PageSpeed Insights or GTmetrix.
+If a page feature stops working, simply remove the handle from the Smart Asset Optimizer box on the Edit Page screen and save. Your site will immediately return to its original state.
 
 == Screenshots ==
 

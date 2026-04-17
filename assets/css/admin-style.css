@@ -1,27 +1,27 @@
 /* Admin Bar Button Highlighting */
-#wpadminbar #wp-admin-bar-fastloader-scan-assets > .ab-item {
+#wpadminbar #wp-admin-bar-sao-fl-scan-assets > .ab-item {
     background-color: #4CA249 !important;
     color: #ffffff !important;
     font-weight: bold;
     transition: background-color 0.2s;
 }
 
-#wpadminbar #wp-admin-bar-fastloader-scan-assets > .ab-item:hover {
+#wpadminbar #wp-admin-bar-sao-fl-scan-assets > .ab-item:hover {
     background-color: #3b8a38 !important;
     color: #ffffff !important;
 }
 
-#wpadminbar #wp-admin-bar-fastloader-scan-assets .ab-icon::before {
+#wpadminbar #wp-admin-bar-sao-fl-scan-assets .ab-icon::before {
     color: #ffffff !important;
 }
 
-/* FastLoader - Modern UI */
-#fastloader-asset-manager-metabox .inside {
+/* Smart Asset Optimizer - Modern UI */
+#sao_fl-asset-manager-metabox .inside {
     margin: 0;
     padding: 15px;
 }
 
-#fastloader_blocked_assets {
+#sao_fl_blocked_assets {
     width: 100%;
     min-height: 120px;
     font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
@@ -34,13 +34,13 @@
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-#fastloader_blocked_assets:focus {
+#sao_fl_blocked_assets:focus {
     border-color: #2271b1;
     box-shadow: 0 0 0 1px #2271b1;
     outline: none;
 }
 
-#fastloader-scanner-modal, #fastloader-warning-modal {
+#sao-fl-scanner-modal, #sao-fl-warning-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -55,11 +55,11 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
-.fastloader-warning-content {
+.sao-fl-warning-content {
     max-width: 450px;
 }
 
-.fastloader-btn-primary {
+.sao-fl-btn-primary {
     background: #2271b1;
     color: #fff;
     border: none;
@@ -71,11 +71,11 @@
     transition: background 0.2s;
 }
 
-.fastloader-btn-primary:hover {
+.sao-fl-btn-primary:hover {
     background: #135e96;
 }
 
-.fastloader-modal-content {
+.sao-fl-modal-content {
     background: #fff;
     width: 90%;
     max-width: 600px;
@@ -85,15 +85,15 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    animation: fastloader-slide-up 0.3s ease-out;
+    animation: sao-fl-slide-up 0.3s ease-out;
 }
 
-@keyframes fastloader-slide-up {
+@keyframes sao-fl-slide-up {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-.fastloader-modal-header {
+.sao-fl-modal-header {
     padding: 20px 25px;
     background: #f8fafc;
     border-bottom: 1px solid #e2e8f0;
@@ -102,14 +102,14 @@
     align-items: center;
 }
 
-.fastloader-modal-header h2 {
+.sao-fl-modal-header h2 {
     margin: 0;
     font-size: 18px;
     font-weight: 700;
     color: #1e293b;
 }
 
-.fastloader-close-btn {
+.sao-fl-close-btn {
     background: none;
     border: none;
     font-size: 24px;
@@ -118,16 +118,16 @@
     line-height: 1;
 }
 
-.fastloader-close-btn:hover {
+.sao-fl-close-btn:hover {
     color: #ef4444;
 }
 
-.fastloader-modal-body {
+.sao-fl-modal-body {
     padding: 25px;
     overflow-y: auto;
 }
 
-.fastloader-section-title {
+.sao-fl-section-title {
     font-size: 12px;
     font-weight: 800;
     text-transform: uppercase;
@@ -138,7 +138,7 @@
     align-items: center;
 }
 
-.fastloader-badge {
+.sao-fl-badge {
     background: #e2e8f0;
     color: #475569;
     padding: 2px 8px;
@@ -147,14 +147,14 @@
     font-size: 10px;
 }
 
-.fastloader-asset-grid {
+.sao-fl-asset-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 25px;
 }
 
-.fastloader-tag {
+.sao-fl-tag {
     background: #f1f5f9;
     border: 1px solid #e2e8f0;
     padding: 6px 12px;
@@ -167,14 +167,14 @@
     transition: all 0.2s;
 }
 
-.fastloader-tag:hover {
+.sao-fl-tag:hover {
     background: #fff;
     border-color: #2271b1;
     color: #2271b1;
     transform: translateY(-1px);
 }
 
-.fastloader-tag::after {
+.sao-fl-tag::after {
     content: 'Click to copy';
     position: absolute;
     bottom: 100%;
@@ -191,11 +191,11 @@
     white-space: nowrap;
 }
 
-.fastloader-tag:hover::after {
+.sao-fl-tag:hover::after {
     opacity: 1;
 }
 
-.fastloader-modal-footer {
+.sao-fl-modal-footer {
     padding: 15px 25px;
     background: #f8fafc;
     border-top: 1px solid #e2e8f0;

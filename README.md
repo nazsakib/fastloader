@@ -1,51 +1,55 @@
-# ⚡ FastLoader: Ultimate WordPress Speed & Asset Optimization 🚀
+# ⚡ Smart Asset Optimizer for Fast Loading 🚀
 
 [![WordPress Plugin](https://img.shields.io/badge/WordPress-Plugin-blue.svg)](https://wordpress.org/plugins/)
 [![License](https://img.shields.io/badge/License-GPL%20v2-orange.svg)](LICENSE.txt)
 [![Performance](https://img.shields.io/badge/Performance-Zero%20Bloat-green.svg)](#)
 [![SEO Optimized](https://img.shields.io/badge/SEO-Optimized-brightgreen.svg)](#)
 
-**FastLoader** is the most surgical way to **boost WordPress speed**, eliminate plugin bloat, and master your **Core Web Vitals**. Stop heavy plugins from loading unused CSS and JS on every page and start ranking higher on Google.
+**Smart Asset Optimizer for Fast Loading** is a high-performance WordPress plugin designed to eliminate the #1 cause of slow websites: **Plugin Bloat**.
+
+## The Problem
+Most WordPress plugins load their JavaScript and CSS on **every single page** of your site, even if that page doesn't use the plugin's features. This results in:
+- Excessive HTTP requests.
+- Bloated page sizes.
+- Slower "Core Web Vitals" (LCP, TBT).
+- Lower SEO rankings.
+
+## The Solution
+Smart Asset Optimizer gives you a surgical **"Kill Switch"** for assets. With a built-in frontend scanner and a per-page management system, you can choose exactly what code runs on every post or page.
 
 ---
 
-## 📈 Why FastLoader? (The SEO Advantage)
+## 🚀 Key Features
 
-Search engines like Google prioritize fast-loading websites. **Unused JavaScript** and **render-blocking CSS** are the #1 killers of your PageSpeed Insights score. FastLoader gives you a "Kill Switch" to remove these assets on a per-page basis, resulting in:
+### 🔍 Real-Time Asset Scanner
+Identify every script and style handle running on your frontend directly from the WordPress Admin Bar. The glassmorphic UI makes it easy to spot and copy handles in seconds.
 
-- **Lower LCP (Largest Contentful Paint):** Faster perceived load times.
-- **Improved TBT (Total Blocking Time):** Reduced JavaScript execution.
-- **Better CLS (Cumulative Layout Shift):** Prevent late-loading styles from shifting content.
-- **Higher Conversion Rates:** Faster sites keep users engaged longer.
+### 🎯 Per-Page Precision
+No more global settings that break your site. Disable assets selectively on a page-by-page basis to ensure maximum compatibility.
 
----
+### 🛡️ Safety Guard
+The plugin automatically prevents you from disabling core WordPress dependencies (like `jquery` or `admin-bar`) while you are logged in, ensuring you never lock yourself out.
 
-## 💎 Premium Features (For Free)
-
-- **🔍 Intelligent Asset Scanner:** Detect active script and style handles directly from your frontend Admin Bar. No more digging through source code!
-- **🎯 Surgical Precision:** Disable assets individually for every Post, Page, or Custom Post Type. No global settings that break your site.
-- **🛡️ Built-in Safety Guard:** Automatic protection for core dependencies like jQuery and the WordPress Admin Bar to prevent accidental breakages.
-- **🍃 Zero-Bloat Architecture:** High-performance code using native WordPress hooks. No external APIs, no heavy libraries, and zero database clutter.
-- **📋 Modern UI/UX:** One-click handle copying from our sleek glassmorphism scanner modal.
+### ⚡ Ultra-Lightweight
+Built with performance in mind. The plugin has zero external dependencies and a footprint of less than 20KB.
 
 ---
 
-## 🛠️ How It Works in 3 Simple Steps
+## 🛠️ Installation
 
-1. **Scan:** Click "Scan Assets" in your Admin Bar while viewing any page to see exactly what's loading.
-2. **Identify:** Find the heavy "handles" (e.g., `contact-form-7`, `elementor-frontend`) you don't need on that specific page.
-3. **Block:** Paste them into the FastLoader Meta Box on the Edit screen and save.
-
-**Result:** A leaner, faster, and SEO-optimized page in seconds!
+1. Clone or download this repository into your `/wp-content/plugins/` directory.
+2. Rename the folder to `smart-asset-optimizer-fast-loading`.
+3. Activate the plugin in the WordPress Dashboard.
 
 ---
 
-## 💻 Quick Installation
+## 📖 How to Use
 
-1. **Download** the latest release.
-2. **Upload** the `fastloader` folder to your `/wp-content/plugins/` directory.
-3. **Activate** via the **Plugins** menu.
-4. **Optimize** and watch your PageSpeed scores climb!
+1. **Scan:** Visit the frontend of any page. Click **Scan Assets** in the top Admin Bar.
+2. **Copy:** Identify the handles you don't need (e.g., `contact-form-7` on a blog post) and click to copy.
+3. **Manage:** Edit the post/page, find the **Smart Asset Optimizer Asset Manager** box in the sidebar.
+4. **Kill:** Paste the handles (one per line) and Save.
+5. **Verify:** Check your page speed and ensure the page still functions correctly.
 
 ---
 
