@@ -39,7 +39,7 @@ class SAO_FL_Asset_Manager
         if (current_user_can('manage_options')) {
             $wp_admin_bar->add_node(array(
                 'id' => 'sao-fl-scan-assets',
-                'title' => '<span class="ab-icon dashicons dashicons-search"></span>' . __('Scan Assets', 'smart-asset-optimizer-fast-loading'),
+                'title' => '<span class="ab-icon dashicons dashicons-search"></span>' . __('Scan Assets', 'smart-asset-optimizer-for-fast-loading'),
                 'href' => '#',
                 'meta' => array('class' => 'sao-fl-scan-action')
             ));
@@ -53,22 +53,22 @@ class SAO_FL_Asset_Manager
             wp_enqueue_script('sao-fl-scanner', SAO_FL_URL . 'assets/js/scanner.js', array('jquery'), SAO_FL_VERSION, true);
             
             wp_localize_script('sao-fl-scanner', 'sao_fl_i18n', array(
-                'scanning'       => esc_html__('Smart Asset Optimizer: Scanning DOM for assets...', 'smart-asset-optimizer-fast-loading'),
-                'no_assets'      => esc_html__('No WordPress-managed assets detected. Ensure you are on the frontend.', 'smart-asset-optimizer-fast-loading'),
-                'active_handles' => esc_html__('Active Asset Handles', 'smart-asset-optimizer-fast-loading'),
-                'scripts'        => esc_html__('Scripts', 'smart-asset-optimizer-fast-loading'),
-                'styles'         => esc_html__('Stylesheets', 'smart-asset-optimizer-fast-loading'),
-                'tip'            => esc_html__('Tip: Click a handle to copy it to your clipboard.', 'smart-asset-optimizer-fast-loading'),
-                'copied'         => esc_html__('✓ Copied!', 'smart-asset-optimizer-fast-loading'),
-                'error_copy'     => esc_html__('Smart Asset Optimizer: Unable to copy', 'smart-asset-optimizer-fast-loading'),
-                'admin_warning'  => esc_html__('Please navigate to the frontend of your website to scan page-specific assets.', 'smart-asset-optimizer-fast-loading'),
+                'scanning'       => esc_html__('Smart Asset Optimizer: Scanning DOM for assets...', 'smart-asset-optimizer-for-fast-loading'),
+                'no_assets'      => esc_html__('No WordPress-managed assets detected. Ensure you are on the frontend.', 'smart-asset-optimizer-for-fast-loading'),
+                'active_handles' => esc_html__('Active Asset Handles', 'smart-asset-optimizer-for-fast-loading'),
+                'scripts'        => esc_html__('Scripts', 'smart-asset-optimizer-for-fast-loading'),
+                'styles'         => esc_html__('Stylesheets', 'smart-asset-optimizer-for-fast-loading'),
+                'tip'            => esc_html__('Tip: Click a handle to copy it to your clipboard.', 'smart-asset-optimizer-for-fast-loading'),
+                'copied'         => esc_html__('✓ Copied!', 'smart-asset-optimizer-for-fast-loading'),
+                'error_copy'     => esc_html__('Smart Asset Optimizer: Unable to copy', 'smart-asset-optimizer-for-fast-loading'),
+                'admin_warning'  => esc_html__('Please navigate to the frontend of your website to scan page-specific assets.', 'smart-asset-optimizer-for-fast-loading'),
             ));
         }
     }
 
     public function register_meta_box()
     {
-        add_meta_box('sao_fl_manager', __('Smart Asset Optimizer Asset Manager', 'smart-asset-optimizer-fast-loading'), array($this, 'render_meta_box'), array('post', 'page'), 'side');
+        add_meta_box('sao_fl_manager', __('Smart Asset Optimizer Asset Manager', 'smart-asset-optimizer-for-fast-loading'), array($this, 'render_meta_box'), array('post', 'page'), 'side');
     }
 
     public function render_meta_box($post)
@@ -76,9 +76,9 @@ class SAO_FL_Asset_Manager
         $blocked = get_post_meta($post->ID, '_sao_fl_blocked_assets', true) ?: '';
         wp_nonce_field('sao_fl_save_meta', 'sao_fl_nonce');
         echo '<div class="sao-fl-metabox-wrapper">';
-        echo '<p class="description" style="margin-bottom: 10px;">' . esc_html__('Paste handles to disable (one per line):', 'smart-asset-optimizer-fast-loading') . '</p>';
+        echo '<p class="description" style="margin-bottom: 10px;">' . esc_html__('Paste handles to disable (one per line):', 'smart-asset-optimizer-for-fast-loading') . '</p>';
         echo '<textarea id="sao_fl_blocked_assets" name="sao_fl_blocked" rows="6" placeholder="e.g. contact-form-7">' . esc_textarea($blocked) . '</textarea>';
-        echo '<p style="font-size: 11px; color: #8c8f94; margin-top: 8px;">' . esc_html__('Use "Scan Assets" in the admin bar to find handles.', 'smart-asset-optimizer-fast-loading') . '</p>';
+        echo '<p style="font-size: 11px; color: #8c8f94; margin-top: 8px;">' . esc_html__('Use "Scan Assets" in the admin bar to find handles.', 'smart-asset-optimizer-for-fast-loading') . '</p>';
         echo '</div>';
     }
 

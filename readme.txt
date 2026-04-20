@@ -30,7 +30,7 @@ Smart Asset Optimizer gives you a surgical "Kill Switch." Easily identify and di
 1. Upload the plugin folder to the `/wp-content/plugins/` directory, or install via the WordPress dashboard.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Access the **Smart Asset Optimizer** meta box on any Post or Page edit screen.
-4. Select the `smart-asset-optimizer-fast-loading.zip` file and click **Install Now**.
+4. Select the `smart-asset-optimizer-for-fast-loading.zip` file and click **Install Now**.
 
 == Frequently Asked Questions ==
 
