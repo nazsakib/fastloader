@@ -1,5 +1,5 @@
 === Smart Asset Optimizer for Fast Loading ===
-Contributors: sakibmdnazmush
+Contributors: sakibsnaz
 Tags: speed, performance, optimization, asset management, core web vitals
 Requires at least: 6.0
 Tested up to: 6.9
