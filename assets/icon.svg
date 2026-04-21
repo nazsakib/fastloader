@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" /> <!-- Tailwind indigo-950 -->
+      <stop offset="100%" stop-color="#0f172a" /> <!-- Tailwind slate-900 -->
+    </linearGradient>
+    
+    <!-- Icon Stroke Gradient -->
+    <linearGradient id="bolt-stroke" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" /> <!-- Tailwind indigo-400 -->
+      <stop offset="100%" stop-color="#c084fc" /> <!-- Tailwind purple-400 -->
+    </linearGradient>
+    
+    <!-- Glow Filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComponentTransfer in="blur" result="glow">
+        <feFuncA type="linear" slope="0.8"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Dark Background -->
+  <rect width="256" height="256" fill="url(#bg)" />
+  
+  <!-- Inner Ambient Glow behind icon -->
+  <circle cx="128" cy="128" r="70" fill="#6366f1" opacity="0.2" filter="url(#glow)" />
+  
+  <!-- Lightning Bolt Icon (scaled from 24x24 Heroicon) -->
+  <!-- 24 * 5.333 = 128 width. Centered at 64,64 -->
+  <g transform="translate(64, 64) scale(5.333)" filter="url(#glow)">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="url(#bolt-stroke)" fill="none" d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </g>
+  <!-- Duplicate without glow for sharper core -->
+  <g transform="translate(64, 64) scale(5.333)">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" stroke="url(#bolt-stroke)" fill="none" d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </g>
+</svg>
